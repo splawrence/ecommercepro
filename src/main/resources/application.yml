@@ -45,9 +45,9 @@ spring:
     activate:
       on-profile: prod
   datasource:
-    url: jdbc:postgresql://viaduct.proxy.rlwy.net:30568/railway
-    username: postgres
-    password: 55da51DdCGfa1FFDeFFaFfF3e1a6aad3
+    url: jdbc:postgresql://${{Postgres.PGHOST}}:${{Postgres.PGPORT}}/${{Postgres.PGDATABASE}}
+    username: ${{Postgres.PGUSER}}
+    password: ${{Postgres.PGPASSWORD}}
   jpa:
     properties:
       hibernate:
