@@ -10,19 +10,21 @@ ecommercepro:
     prod-url: https://api.upthesky.net
 
 # Metadata fetch and automatic database updating is disabled by default to allow the application to build without an active database connection. 
-# spring:
-#   datasource:
-#     # Dummy database connection details
-#     url: jdbc:postgresql://localhost:5432/ecommerce
-#   jpa:
-#     properties:
-#       hibernate:
-#         dialect: org.hibernate.dialect.PostgreSQLDialect
-#         temp:
-#         # Disable the metadata fetch
-#           use_jdbc_metadata_defaults: false
-#     # Disable automatic database schema updating
-#     hibernate.ddl-auto: none
+spring:
+  datasource:
+    url: jdbc:postgresql://PGHOST:PGPORT/PGDATABASE
+    username: PGUSER
+    password: PGPASSWORD
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # temp:
+        # Disable the metadata fetch
+          # use_jdbc_metadata_defaults: false
+    # Disable automatic database schema updating
+    hibernate.ddl-auto: update
 ---
 # Desktop profile
 spring:
