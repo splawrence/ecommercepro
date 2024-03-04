@@ -47,7 +47,7 @@ spring:
   datasource:
     url: jdbc:postgresql://viaduct.proxy.rlwy.net:30568/railway
     username: postgres
-    password: ${{NAMESPACE.PGPASSWORD}}
+    password: ${{shared.PGPASSWORD}}
   jpa:
     properties:
       hibernate:
