@@ -45,8 +45,8 @@ spring:
     activate:
       on-profile: prod
   datasource:
-    url: jdbc:postgresql://${{Postgres.PGHOST}}:${{Postgres.PGPORT}}/${{Postgres.PGDATABASE}}
-    username: ${{Postgres.PGUSER}}
+    url: jdbc:postgresql://viaduct.proxy.rlwy.net:30568/railway
+    username: postgres
     password: ${{Postgres.PGPASSWORD}}
   jpa:
     properties:
