@@ -12,9 +12,9 @@ ecommercepro:
 # Metadata fetch and automatic database updating is disabled by default to allow the application to build without an active database connection. 
 spring:
   datasource:
-    url: jdbc:postgresql://PGHOST:PGPORT/PGDATABASE
-    username: PGUSER
-    password: PGPASSWORD
+    url: jdbc:postgresql://viaduct.proxy.rlwy.net:30568/railway
+    username: postgres
+    password: 55da51DdCGfa1FFDeFFaFfF3e1a6aad3
 
   jpa:
     properties:
