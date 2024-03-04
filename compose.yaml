@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  ecommercepro:
+    image: ecommercepro:latest
+    build:
+      context: .
+    container_name: ecommercepro
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/ecommerce
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,address=*:8081,server=y,suspend=n
+    ports:
+      - '8080:8080'
+      - '8081:8081'
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=ecommerce
+    # initialize the database with some data
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
